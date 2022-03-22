@@ -69,6 +69,23 @@ main .subtitulo {
   text-align: center;
   font-size: 2rem;
 }
+main .main-coins {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+main .main-coins div {
+  width: 33.3333333333%;
+  text-align: center;
+  margin: 20px 0;
+}
+main .main-coins div h3 {
+  padding: 10px;
+  color: green;
+}
+main .main-coins div p {
+  margin: 5px 0;
+}
 
 @keyframes slideImg {
   0% {
@@ -78,6 +95,14 @@ main .subtitulo {
   100% {
     opacity: 1;
     scale: 1;
+  }
+}
+@keyframes valorAtualizado {
+  0% {
+    font-weight: bold;
+  }
+  100% {
+    font-weight: normal;
   }
 }
 

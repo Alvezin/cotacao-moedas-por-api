@@ -67,6 +67,23 @@ main{
         text-align: center;
         font-size: 2rem;
     }
+    & .main-coins{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        & div{
+            width: calc(100%/3);
+            text-align: center;
+            margin: 20px 0;
+            & h3{
+                padding: 10px;
+                color: green;
+            }
+            & p{
+                margin: 5px 0;
+            }
+        }
+    }
 }
 
 @keyframes slideImg {
@@ -77,5 +94,14 @@ main{
     100%{
         opacity: 1;
         scale: 1;
+    }
+}
+
+@keyframes valorAtualizado {
+    0%{
+        font-weight: bold;
+    }
+    100%{
+        font-weight: normal;
     }
 }
