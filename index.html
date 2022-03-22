@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Quotation Now | Cotação de moedas</title>
+</head>
+<body>
+    <header>
+        <h1>Quotation Now</h1>
+    </header>
+    <main>
+        <section class="slide">
+            <button id="btn-back"><img src="image/seta-esquerda.jpg" alt=""></button>
+            <div id="slide-box">
+                <div class="slide1 box active">
+                    <a href="#"><img src="image/usd-eur.jpg" alt="slogan conversão dólar/euro"></a>
+                </div>
+                <div class="slide2 box">
+                    <a href="#"><img src="image/usd-brl.jpg" alt="slogan conversão dólar/real"></a>
+                </div>
+                <div class="slide3 box">
+                    <a href="#"><img src="image/eur-cny.jpg" alt="slogan conversão euro/yuan chines"></a>
+                </div>
+            </div>
+            <button id="btn-front"><img src="image/seta-direita.jpg" alt=""></button>
+
+        </section>
+        <h2 class="subtitulo">Acompanhe as quotações das mais variadas moedas ao redor do mundo!</h2>
+
+        <section class="main-coins">
+            <div id="div1">
+                <h3>EUR-USD</h3>
+                <p>Valor: <span class="bid" ></span></p>
+                <p>Variação <small>(%)</small>: <span class="pctChange"></span></p>
+                <p>Mínimo: <span class="low"></span></p>
+                <p>Máximo: <span class="high"></span></p>
+            </div>
+            <div id="div2">
+                <h3>EUR-BRL</h3>
+                <p>Valor: <span class="bid"></span></p>
+                <p>Variação: <small>(%)</small>: <span class="variation"></span></p>
+                <p>Mínimo: <span class="low"></span></p>
+                <p>Máximo: <span class="high"></span></p> 
+            </div>
+            <div id="div3">
+                <h3>BRL-JPY</h3>
+                <p>Valor: <span class="bid"></span></p>
+                <p>Variação: <small>(%)</small>: <span class="variation"></span></p>
+                <p>Mínimo: <span class="low"></span></p>
+                <p>Máximo: <span class="high"></span></p>
+            </div>
+            <div id="div4">
+                <h3>USD-GBP</h3>
+                <p>Valor: <span class="bid"></span></p>
+                <p>Variação: <small>(%)</small>: <span class="variation"></span></p>
+                <p>Mínimo: <span class="low"></span></p>
+                <p>Máximo: <span class="high"></span></p>
+            </div>
+            <div id="div5">
+                <h3>CNY-EUR</h3>
+                <p>Valor: <span class="bid"></span></p>
+                <p>Variação: <small>(%)</small>: <span class="variation"></span></p>
+                <p>Mínimo: <span class="low"></span></p>
+                <p>Máximo: <span class="high"></span></p>
+            </div>
+            <div id="div6">
+                <h3>SEK-BRL</h3>
+                <p>Valor: <span class="bid"></span></p>
+                <p>Variação: <small>(%)</small>: <span class="variation"></span></p>
+                <p>Mínimo: <span class="low"></span></p>
+                <p>Máximo: <span class="high"></span></p>
+            </div>
+        </section>
+    </main>
+<script src="script/fetchApi.js"></script>
+<script src="script/toggleSlide.js"></script>
+</body>
+</html>
