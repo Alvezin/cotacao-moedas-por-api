@@ -1,6 +1,8 @@
+@import "variavel.scss";
 *{
     padding: 0;
     margin: 0;
+    font-family: $fonte;
 }
 header{
     height: 130px;
@@ -68,6 +70,7 @@ main{
         font-size: 2rem;
     }
     & .main-coins{
+        margin-top: 100px;
         display: flex;
         flex-wrap: wrap;
         align-items: center;
@@ -81,7 +84,18 @@ main{
             }
             & p{
                 margin: 5px 0;
+                font-weight: bold;
+                letter-spacing: .8px;
+                & span{
+                    font-weight: normal;
+                }
             }
+        }
+        & .btn{
+            margin: auto;
+            padding: 10px 20px;
+            text-transform: uppercase;
+            
         }
     }
 }
