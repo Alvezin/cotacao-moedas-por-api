@@ -99,6 +99,54 @@ main .main-coins .btn {
   padding: 10px 20px;
   text-transform: uppercase;
 }
+main .conversor {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 50px 20px;
+  line-height: 40px;
+}
+main .conversor .btn {
+  display: block;
+  text-transform: uppercase;
+  padding: 5px 20px;
+  cursor: pointer;
+  border-radius: 10px;
+  color: white;
+  border: 1px solid;
+}
+main .conversor #compra h3 {
+  color: green;
+  text-transform: uppercase;
+  text-align: center;
+}
+main .conversor #compra #submitCompra {
+  background-color: green;
+  border-color: #195019;
+}
+main .conversor #compra .inputValor {
+  border-radius: 8px;
+  padding: 5px;
+  border: 1px solid #1f1f11;
+}
+main .conversor #venda h3 {
+  color: red;
+  text-transform: uppercase;
+  text-align: center;
+}
+main .conversor #venda #submitVenda {
+  background-color: red;
+  border-color: #911919;
+}
+main .conversor #venda .inputValor {
+  border-radius: 8px;
+  padding: 5px;
+  border: 1px solid #1f1f11;
+}
+main .conversor p {
+  text-transform: uppercase;
+}
 
 @keyframes slideImg {
   0% {

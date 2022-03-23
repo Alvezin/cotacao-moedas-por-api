@@ -33,50 +33,98 @@
         <section class="main-coins">
             <div id="div1" class="caixa">
                 <h3>EUR-USD</h3>
-                <p>Valor: <span on class="bid" ></span></p>
+                <p>Compra: <span on class="bid" ></span></p>
+                <p>Venda: <span on class="ask" ></span></p>
                 <p>Variação<small>(%)</small>: <span class="pctChange"></span></p>
                 <p>Mínimo: <span class="low"></span></p>
                 <p>Máximo: <span class="high"></span></p>
             </div>
             <div id="div2" class="caixa">
                 <h3>EUR-BRL</h3>
-                <p>Valor: <span class="bid"></span></p>
+                <p>Compra: <span on class="bid" ></span></p>
+                <p>Venda: <span on class="ask" ></span></p>
                 <p>Variação<small>(%)</small>: <span class="pctChange"></span></p>
                 <p>Mínimo: <span class="low"></span></p>
                 <p>Máximo: <span class="high"></span></p> 
             </div>
             <div id="div3" class="caixa">
                 <h3>BRL-JPY</h3>
-                <p>Valor: <span class="bid"></span></p>
+                <p>Compra: <span on class="bid" ></span></p>
+                <p>Venda: <span on class="ask" ></span></p>
                 <p>Variação<small>(%)</small>: <span class="pctChange"></span></p>
                 <p>Mínimo: <span class="low"></span></p>
                 <p>Máximo: <span class="high"></span></p>
             </div>
             <div id="div4" class="caixa">
                 <h3>USD-GBP</h3>
-                <p>Valor: <span class="bid"></span></p>
+                <p>Compra: <span on class="bid" ></span></p>
+                <p>Venda: <span on class="ask" ></span></p>
                 <p>Variação<small>(%)</small>: <span class="pctChange"></span></p>
                 <p>Mínimo: <span class="low"></span></p>
                 <p>Máximo: <span class="high"></span></p>
             </div>
             <div id="div5" class="caixa">
                 <h3>CNY-EUR</h3>
-                <p>Valor: <span class="bid"></span></p>
+                <p>Compra: <span on class="bid" ></span></p>
+                <p>Venda: <span on class="ask" ></span></p>
                 <p>Variação<small>(%)</small>: <span class="pctChange"></span></p>
                 <p>Mínimo: <span class="low"></span></p>
                 <p>Máximo: <span class="high"></span></p>
             </div>
             <div id="div6" class="caixa">
                 <h3>SEK-BRL</h3>
-                <p>Valor: <span class="bid"></span></p>
+                <p>Compra: <span on class="bid" ></span></p>
+                <p>Venda: <span on class="ask" ></span></p>
                 <p>Variação<small>(%)</small>: <span class="pctChange"></span></p>
                 <p>Mínimo: <span class="low"></span></p>
                 <p>Máximo: <span class="high"></span></p>
             </div>
             <input type="button" value="Ver mais" onclick="redirect()" class="btn">
         </section>
-    </main>
 
+        <section class="conversor">
+            
+            <div id="compra">
+                <h3>Compra</h3>
+                <label for="inputParCompra">Par: </label>
+                <input id="inputParCompra" type="text" class="inputValor" placeholder="Escolha o par:" list="valueCompra">
+                <p id="parCompra"></p>
+                
+                <label for="inputValueCompra">Quantidade: </label>
+                <input id="inputValueCompra" type="number" class="inputValor" placeholder="Valor:" size="10" list="values">
+                
+                <input type="button" id="submitCompra"  class="btn" value="Converter" onclick=" mult('inputParCompra', 'inputValueCompra', 'totalCompra')">
+
+                <p>Valor total: <span id="totalCompra"></span></p>
+
+                <datalist id="valueCompra">
+                </datalist>
+                
+            </div>
+
+            <div id="venda">
+                <h3>Venda</h3>
+                <label for="inputParVenda">Par: </label>
+                <input id="inputParVenda" type="text" class="inputValor" placeholder="Escolha o par:"  list="valueVenda" >
+                <p id="parVenda"></p>
+                      
+                <label for="inputValueVenda">Quantidade: </label>
+                <input id="inputValueVenda" type="number" class="inputValor" placeholder="Valor:" size="10" list="values">
+                
+                <input type="button" id="submitVenda" class="btn" value="Converter"  onclick=" mult('inputParVenda', 'inputValueVenda', 'totalVenda')">
+
+                <p>Valor total: <span id="totalVenda"></span></p>
+
+                <datalist id="valueVenda">
+                   
+                </datalist>
+                
+            </div>
+
+        </section>
+    </main>
+<script src="script/convert.js"></script>
+<script src="script/fetchCompraVenda.js"></script>
 <script src="script/fetchApi.js"></script>
 <script src="script/toggleSlide.js"></script>
 <script src="script/redirect.js"></script>
