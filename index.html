@@ -10,6 +10,16 @@
 <body>
     <header>
         <h1>Quotation Now</h1>
+        <nav>
+            <button id="toggleMenu" onclick="toggleMenu('menu')"><ion-icon name="menu"></ion-icon></button>
+            <ul id="menu">
+                <li><a href="#">Início</a></li>
+                <li><a href="page.html">Catálogo</a></li>
+                <li><a href="orcamento.html">Orçamento</a></li>
+                <li><a href="#">Histórico</a></li>
+                <li><a href="#">Cadastro</a></li>
+            </ul>
+        </nav>
     </header>
     <main>
         <section class="slide">
@@ -28,8 +38,22 @@
             <button id="btn-front"><img src="image/seta-direita.jpg" alt=""></button>
 
         </section>
-        <h2 class="subtitulo">Acompanhe a cotação das mais variadas moedas ao redor do mundo!</h2>
 
+        <section class="slide slideMobile">
+            <div id="slide-box-mobile">
+                <div class="slide1 box boxMobile active">
+                    <a href="#"><img src="image/usd-eur.jpg" alt="slogan conversão dólar/euro"></a>
+                </div>
+                <div class="slide2 box boxMobile">
+                    <a href="#"><img src="image/usd-brl.jpg" alt="slogan conversão dólar/real"></a>
+                </div>
+                <div class="slide3 box boxMobile">
+                    <a href="#"><img src="image/eur-cny.jpg" alt="slogan conversão euro/yuan chines"></a>
+                </div>
+            </div>
+        </section>
+        
+        <h2 class="subtitulo">Acompanhe a cotação das mais variadas moedas ao redor do mundo!</h2>
         <section class="main-coins">
             <div id="div1" class="caixa">
                 <h3>EUR-USD</h3>
@@ -82,51 +106,85 @@
             <input type="button" value="Ver mais" onclick="redirect()" class="btn">
         </section>
 
-        <section class="conversor">
-            
-            <div id="compra">
-                <h3>Compra</h3>
-                <label for="inputParCompra">Par: </label>
-                <input id="inputParCompra" type="text" class="inputValor" placeholder="Escolha o par:" list="valueCompra">
-                <p id="parCompra"></p>
-                
-                <label for="inputValueCompra">Quantidade: </label>
-                <input id="inputValueCompra" type="number" class="inputValor" placeholder="Valor:" size="10" list="values">
-                
-                <input type="button" id="submitCompra"  class="btn" value="Converter" onclick=" mult('inputParCompra', 'inputValueCompra', 'totalCompra')">
+        <section class="about">
+            <article>
+                <h2>Sobre</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Ducimus, eum cumque veniam unde rem laudantium ut nesciunt eaque in,
+                    quaerat accusamus soluta vel sit iste illo excepturi commodi architecto at!
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Ducimus, eum cumque veniam unde rem laudantium ut nesciunt eaque in,
+                    quaerat accusamus soluta vel sit iste illo excepturi commodi architecto at!
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Ducimus, eum cumque veniam unde rem laudantium ut nesciunt eaque in,
+                    quaerat accusamus soluta vel sit iste illo excepturi commodi architecto at!
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Ducimus, eum cumque veniam unde rem laudantium ut nesciunt eaque in,
+                    quaerat accusamus soluta vel sit iste illo excepturi commodi architecto at!
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Ducimus, eum cumque veniam unde rem laudantium ut nesciunt eaque in,
+                    quaerat accusamus soluta vel sit iste illo excepturi commodi architecto at!
+                </p>
+            </article>
+            <form action="" method="post">
+                <h3>Receba nossa newsletter!</h3>
+                <p>Enviaremos a você diariamente alertas completos sobre cotações, moedas e notícias sobre a econômia do Brasil e do mundo.</p>
+                <div class="input">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" placeholder="Insira seu nome:" required>
+                </div>
 
-                <p>Valor total: <span id="totalCompra"></span></p>
+                <div class="input">
+                    <label for="sobrenome">Sobrenome:</label>
+                    <input type="text" id="sobrenome" placeholder="Insira seu sobrenome:" required>
+                </div>
 
-                <datalist id="valueCompra">
-                </datalist>
-                
-            </div>
-
-            <div id="venda">
-                <h3>Venda</h3>
-                <label for="inputParVenda">Par: </label>
-                <input id="inputParVenda" type="text" class="inputValor" placeholder="Escolha o par:"  list="valueVenda" >
-                <p id="parVenda"></p>
-                      
-                <label for="inputValueVenda">Quantidade: </label>
-                <input id="inputValueVenda" type="number" class="inputValor" placeholder="Valor:" size="10" list="values">
-                
-                <input type="button" id="submitVenda" class="btn" value="Converter"  onclick=" mult('inputParVenda', 'inputValueVenda', 'totalVenda')">
-
-                <p>Valor total: <span id="totalVenda"></span></p>
-
-                <datalist id="valueVenda">
-                   
-                </datalist>
-                
-            </div>
-
+                <div class="input">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" placeholder="Insira seu e-mail:" required>
+                </div>
+                <div class="checkbox">
+                    <input type="checkbox" id="politica" required>
+                    <label for="politica">Li e aceito as <a href="#">Políticas de Privacidade</a>.</label>
+                </div>
+                <button type="submit">Cadastrar</button>
+                <p><small>Você pode cancelar o envio de e-mails a qualquer momento. <a href="#"><strong>Saiba Mais</strong></a>.</small></p>
+            </form>
         </section>
+
+        <footer>
+            <section class="social">
+                <nav>
+                    <h4>Redes sociais!</h4>
+                    <ul>
+                        <li><a href="#"><ion-icon name="logo-facebook"></ion-icon> Facebook</a></li>
+                        <li><a href="#"><ion-icon name="logo-instagram"></ion-icon> Instagram</a></li>
+                        <li><a href="#"><ion-icon name="logo-linkedin"></ion-icon> LinkedIn</a></li>
+                        <li><a href="#"><ion-icon name="logo-twitter"></ion-icon> Twitter</a></li>
+                    </ul>
+                </nav>
+            </section>
+            <section class="logo">
+                <h2>Quotation Now &#174;</h2>
+            </section>
+            <section class="outros">
+                <nav>
+                    <h4>Outros</h4>
+                    <ul>
+                        <li><a href="#">Trabalhe Conosco</a></li>
+                        <li><a href="#">Jurídico</a></li>
+                        <li><a href="#">Políticas de Privacidade</a></li>
+                    </ul>
+                </nav>
+            </section>
+        </footer>
     </main>
-<script src="script/convert.js"></script>
-<script src="script/fetchCompraVenda.js"></script>
-<script src="script/fetchApi.js"></script>
-<script src="script/toggleSlide.js"></script>
-<script src="script/redirect.js"></script>
+    <script src="script/toggleSlideMobile.js"></script>
+    <script src="script/toggleMenu.js"></script>
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <script src="script/fetchApi.js"></script>
+    <script src="script/toggleSlide.js"></script>
+    <script src="script/redirect.js"></script>
 </body>
 </html>

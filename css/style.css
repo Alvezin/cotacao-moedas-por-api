@@ -7,9 +7,37 @@
 
 header {
   height: 130px;
-  background-color: antiquewhite;
+  background-color: #F0F4F2;
+  color: #00722B;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+header nav button {
+  display: none;
+}
+header nav ul {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  list-style: none;
+}
+header nav ul li:last-child {
+  padding: 1px;
+  border-left: 7px solid #00F35A;
+  margin-left: 15px;
+}
+header nav ul li a {
+  text-decoration: none;
+  color: #00230D;
+  text-transform: uppercase;
+  padding: 2px;
+}
+header nav ul li a:hover {
+  animation: underline 0.8s forwards;
 }
 
 main {
@@ -68,15 +96,22 @@ main .slide .slide3 {
 main .slide .slide3.active {
   display: block;
 }
+main .slideMobile {
+  display: none;
+}
 main .subtitulo {
   text-align: center;
+  color: #00722B;
   font-size: 2rem;
 }
 main .main-coins {
+  background-color: #00722B;
+  border-radius: 10px;
   margin-top: 100px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  padding: 20px;
 }
 main .main-coins div {
   width: 33.3333333333%;
@@ -85,68 +120,174 @@ main .main-coins div {
 }
 main .main-coins div h3 {
   padding: 10px;
-  color: green;
+  color: #00F35A;
 }
 main .main-coins div p {
   margin: 5px 0;
   font-weight: bold;
   letter-spacing: 0.8px;
+  color: #F0F4F2;
 }
 main .main-coins div p span {
   font-weight: normal;
+  color: #00F35A;
 }
 main .main-coins .btn {
   margin: auto;
-  padding: 10px 20px;
+  padding: 8px 30px;
   text-transform: uppercase;
-}
-main .conversor {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  padding: 50px 20px;
-  line-height: 40px;
-}
-main .conversor .btn {
   display: block;
-  text-transform: uppercase;
-  padding: 5px 20px;
   cursor: pointer;
   border-radius: 10px;
-  color: white;
-  border: 1px solid;
+  color: #00230D;
+  border: 1px solid #00722B;
+  background-color: #00F35A;
 }
-main .conversor #compra h3 {
-  color: green;
-  text-transform: uppercase;
+main .main-coins .btn:hover {
+  background-color: #00A53D;
+  color: #F0F4F2;
+  transition: 0.5s;
+}
+main .about {
+  height: 1fr;
+  margin: 20px 0;
+  display: grid;
+  grid-template-areas: "txt form" "txt form";
+  grid-template-columns: 60% 1fr;
+  gap: 20px;
+}
+main .about article {
+  grid-area: txt;
+  background-image: url(/image/money.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  box-sizing: border-box;
+  padding: 20px;
+  border-radius: 10px;
+  width: calc(100% - 20px);
+  margin: auto;
+}
+main .about article h2 {
+  border-left: 8px solid #00F35A;
+  border-bottom: 1px solid #00F35A;
+  margin-bottom: 10px;
+  color: #F0F4F2;
+  padding: 2px;
+}
+main .about article p {
+  align-items: center;
+  color: #F0F4F2;
+  line-height: 50px;
+}
+main .about form {
+  width: calc(100% - 20px);
+  border-radius: 10px;
+  grid-area: form;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #F0F4F2;
+  padding: 10px;
+  box-sizing: border-box;
+}
+main .about form h3 {
   text-align: center;
-}
-main .conversor #compra #submitCompra {
-  background-color: green;
-  border-color: #195019;
-}
-main .conversor #compra .inputValor {
-  border-radius: 8px;
-  padding: 5px;
-  border: 1px solid #1f1f11;
-}
-main .conversor #venda h3 {
-  color: red;
+  padding: 20px;
   text-transform: uppercase;
-  text-align: center;
+  color: #00F35A;
 }
-main .conversor #venda #submitVenda {
-  background-color: red;
-  border-color: #911919;
+main .about form button {
+  padding: 5px 20px;
+  width: fit-content;
+  margin: auto;
 }
-main .conversor #venda .inputValor {
-  border-radius: 8px;
-  padding: 5px;
-  border: 1px solid #1f1f11;
+main .about form div {
+  margin: auto 0;
+  width: 100%;
 }
-main .conversor p {
+main .about form .input {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: fit-content;
+  align-items: center;
+}
+main .about form .input input {
+  width: 50%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #e6e5e5;
+  font-size: 1rem;
+}
+main .about form .input input:focus {
+  outline: none;
+  background-color: #e4e2e2;
+  transition: 0.5s ease-in;
+}
+main .about form .input input:hover {
+  background-color: #f7f6f6;
+}
+main .about form .checkbox {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: fit-content;
+  align-items: center;
+}
+main .about form .checkbox label {
+  padding-left: 5px;
+}
+main .about form .checkbox label a:hover {
+  color: #6a146a;
+}
+main .about form button {
+  margin: auto;
+  padding: 8px 30px;
   text-transform: uppercase;
+  display: block;
+  cursor: pointer;
+  border-radius: 10px;
+  color: #00230D;
+  border: 1px solid #00722B;
+  background-color: #00F35A;
+}
+main .about form button:hover {
+  background-color: #00A53D;
+  color: #F0F4F2;
+  transition: 0.5s;
+}
+
+footer {
+  background-color: black;
+  padding: 30px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  height: 1fr;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+footer .social ul {
+  padding-left: 10px;
+}
+footer h4 {
+  color: #F0F4F2;
+}
+footer nav ul {
+  list-style: none;
+}
+footer nav ul a {
+  color: #00F35A;
+  text-decoration: none;
+}
+footer h2 {
+  color: #00F35A;
+}
+footer .logo {
+  display: flex;
+  align-items: flex-end;
 }
 
 @keyframes slideImg {
@@ -159,12 +300,91 @@ main .conversor p {
     scale: 1;
   }
 }
-@keyframes valorAtualizado {
-  0% {
-    font-weight: bold;
+@keyframes underline {
+  to {
+    color: #00A53D;
   }
-  100% {
-    font-weight: normal;
+}
+@media screen and (max-width: 898px) {
+  main .about {
+    grid-template-areas: "txt txt" "form form";
+    grid-template-columns: 100%;
+    grid-template-rows: 1fr 1fr;
+    gap: 0;
+  }
+  main .about form {
+    margin: 10px;
+  }
+  main .about form h3 {
+    padding: 0;
+  }
+}
+@media screen and (max-width: 706px) {
+  header nav button {
+    display: block;
+    padding: 10px 13px;
+    border-radius: 25%;
+    border: 1px solid #bbb9b9;
+    background-color: #00F35A;
+    color: #00230D;
+    cursor: pointer;
+  }
+  header nav ul {
+    position: absolute;
+    top: 130px;
+    left: 0;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    background-color: #bbb9b9;
+    width: 100vw;
+    height: calc(100vh - 130px);
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  header nav ul li {
+    height: 20%;
+    margin: 0;
+    text-align: center;
+  }
+  header nav ul li a {
+    font-size: 1rem;
+  }
+  header nav ul.active {
+    display: flex;
+  }
+
+  main .slide {
+    display: none;
+    padding: 14px 0;
+  }
+  main .slideMobile {
+    display: block;
+  }
+}
+@media screen and (max-width: 482px) {
+  main .subtitulo {
+    font-size: 1.3rem;
+  }
+  main .main-coins div {
+    width: 50%;
+  }
+  main .about {
+    grid-template-rows: 1fr;
+  }
+  main .about form {
+    height: fit-content;
+  }
+  main .about form div {
+    margin: 34px 0;
+  }
+  main .about form button {
+    margin: 0 auto;
+  }
+
+  footer h2 {
+    display: none;
   }
 }
 

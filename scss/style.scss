@@ -1,4 +1,20 @@
 @import "variavel.scss";
+@mixin button {
+    margin: auto;
+            padding: 8px 30px;
+            text-transform: uppercase;
+            display: block;
+            cursor: pointer;
+            border-radius: 10px;
+            color: $verde4;
+            border: 1px solid $verde3;
+            background-color: $verde1;
+            &:hover{
+                background-color: $verde2;
+                color: $branco;
+                transition: .5s;
+            }
+}
 *{
     padding: 0;
     margin: 0;
@@ -6,9 +22,42 @@
 }
 header{
     height: 130px;
-    background-color: antiquewhite;
+    background-color: $branco;
+    color: $verde3;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    & nav{
+        button{
+            display: none;
+        }
+        & ul{
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            list-style: none;
+            & li{
+                &:last-child{
+                        padding: 1px;
+                        border-left: 7px solid $verde1;
+                        margin-left: 15px;
+
+                }
+                & a{
+                    text-decoration: none;
+                    color: $verde4;
+                    text-transform: uppercase;
+                    padding: 2px;
+                    &:hover{
+                        animation: underline .8s forwards;
+                    }
+            }
+                }
+        }
+    }
 }
 main{
     margin-top: 20px;
@@ -66,90 +115,181 @@ main{
             }
         }
     }
+    & .slideMobile{
+        display: none;
+    }
     & .subtitulo{
         text-align: center;
+        color: $verde3;
         font-size: 2rem;
     }
     & .main-coins{
+        background-color: $verde3;
+        border-radius: 10px;
         margin-top: 100px;
         display: flex;
         flex-wrap: wrap;
         align-items: center;
+        padding: 20px;
         & div{
             width: calc(100%/3);
             text-align: center;
             margin: 20px 0;
             & h3{
                 padding: 10px;
-                color: green;
+                color: $verde1;
             }
             & p{
                 margin: 5px 0;
                 font-weight: bold;
                 letter-spacing: .8px;
+                color: $branco;
                 & span{
                     font-weight: normal;
+                    color: $verde1;
                 }
             }
         }
         & .btn{
-            margin: auto;
-            padding: 10px 20px;
-            text-transform: uppercase;
-            
+            @include button();
         }
     }
-    & .conversor{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        padding: 50px 20px;
-        line-height: 40px;
-        & .btn{
-            display: block;
-            text-transform: uppercase;
-            padding: 5px 20px;
-            cursor: pointer;
+    & .about{
+        height: 1fr;
+        margin: 20px 0;
+        display: grid;
+        grid-template-areas: 
+        "txt form"
+        "txt form";
+        grid-template-columns: 60% 1fr;
+        gap: 20px;
+        & article{
+            grid-area: txt;
+            background-image: url(/image/money.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            box-sizing: border-box;
+            padding: 20px;
             border-radius: 10px;
-            color: white;
-            border: 1px solid;
+            width: calc(100% - 20px);
+            margin: auto;
+            & h2{
+                border-left: 8px solid $verde1;
+                border-bottom: 1px solid $verde1;
+                margin-bottom: 10px;
+                color: $branco;
+                padding: 2px;
+            }
+            & p{
+                align-items: center;
+                color: $branco;
+                line-height: 50px;
+            }
+
         }
-        & #compra{
+        & form{
+            width: calc(100% - 20px);
+            border-radius: 10px;
+            grid-area: form;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: $branco;
+            padding: 10px;
+            box-sizing: border-box;
             & h3{
-                color: green;
-                text-transform: uppercase;
                 text-align: center;
-            }
-            & #submitCompra{
-                background-color: green;
-                border-color: rgb(25, 80, 25);
-            }
-            & .inputValor{
-                border-radius: 8px;
-                padding: 5px;
-                border: 1px solid #1f1f11;
-            }
-        }
-        & #venda{
-            & h3{
-                color: red;
+                padding: 20px;
                 text-transform: uppercase;
-                text-align: center;
+                color: $verde1;
             }
-            & #submitVenda{
-                background-color: red;
-                border-color: rgb(145, 25, 25);
+            & button{
+                padding: 5px 20px;
+                width: fit-content;
+                margin: auto;
             }
-            & .inputValor{
-                border-radius: 8px;
-                padding: 5px;
-                border: 1px solid #1f1f11;
+            & div{
+                margin: auto 0;
+                width: 100%;
+            }
+            & .input{
+                display: flex;
+                justify-content: space-around;
+                width: 100%;
+                height: fit-content;
+                align-items: center;
+                & input{
+                    width: 50%;
+                    padding: 10px;
+                    border-radius: 10px;
+                    border: 1px solid #e6e5e5;
+                    font-size: 1rem;        
+                    &:focus{
+                        outline: none;
+                        background-color: darken($color:#e6e5e5, $amount: 1);
+                        transition: .5s ease-in;
+                    }
+                    &:hover{
+                        background-color: #f7f6f6;
+                    }
+                }
+            }
+            & .checkbox{
+                display: flex;
+                width: 100%;
+                justify-content: center;
+                height: fit-content;
+                align-items: center;
+                & label{
+                    padding-left: 5px;
+                    & a{
+                        &:hover{
+                            color: rgb(106, 20, 106);
+                        }
+                    }
+                }
+            }
+            & button{
+                @include button();
             }
         }
-        & p{
-            text-transform: uppercase;
+    }
+    
+}
+footer{
+    background-color: black;
+    padding: 30px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 1fr;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    & .social{
+        & ul{
+            padding-left: 10px;
         }
+    }
+    & h4{
+        color: $branco;
+    }
+    & nav{
+        & ul{
+            list-style: none;
+            a{
+                color: $verde1;
+                text-decoration: none;
+            }
+        }
+    }
+    & h2{
+        color: $verde1;
+    }
+    & .logo{
+        display: flex;
+        align-items: flex-end;
     }
 }
 
@@ -164,11 +304,114 @@ main{
     }
 }
 
-@keyframes valorAtualizado {
-    0%{
-        font-weight: bold;
+@keyframes underline {
+   to{
+       color: $verde2;
+   }
+   
+    
+}
+
+@media screen and (max-width:898px) {
+    main{
+        & .about{
+            grid-template-areas: 
+            "txt txt"
+            "form form";
+            grid-template-columns: 100%;
+            grid-template-rows: 1fr 1fr;
+            gap: 0;
+            & form{
+            
+                & h3{
+                    padding: 0;
+                    
+                }
+               
+                margin: 10px;
+            }
+        }
     }
-    100%{
-        font-weight: normal;
+}
+
+@media screen and (max-width: 706px) {
+    header{
+        nav{
+            //position: relative;
+            & button{
+                display: block;
+                padding: 10px 13px;
+                border-radius: 25%;
+                border: 1px solid #bbb9b9;
+                background-color: $verde1;
+                color: $verde4;
+                cursor: pointer;
+            }
+            ul{
+                position: absolute;
+                top: 130px;
+                left: 0;
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                gap: 50px;
+                background-color: #bbb9b9;
+                width: 100vw;
+                height: calc(100vh - 130px);
+                padding: 10px;
+                box-sizing: border-box;
+                & li{
+                    height: calc(100% / 5);
+                    margin: 0;
+                    text-align: center;
+                    & a{
+                        font-size: 1rem;
+                    }
+                }
+            }
+            & ul.active{
+                display: flex;
+            }
+        }
+    }
+    main{
+        & .slide{
+            display: none;
+            padding: 14px 0;
+        }
+        & .slideMobile{
+            display: block;
+        }
+    }
+}
+
+@media screen and (max-width: 482px) {
+    main{
+        .subtitulo{
+            font-size: 1.3rem;
+        }
+        & .main-coins{
+            & div{
+                width: calc(100% / 2);
+            }
+        }
+        & .about{
+            grid-template-rows: 1fr;
+            & form{
+                height: fit-content;
+                & div{
+                    margin: 34px 0;
+                }
+                & button{
+                    margin: 0 auto;
+                }
+            }
+        }
+        
+    }
+    footer{
+        & h2{
+            display: none;
+        }
     }
 }
