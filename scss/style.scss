@@ -165,7 +165,7 @@ main{
         gap: 20px;
         & article{
             grid-area: txt;
-            background-image: url(/image/money.jpg);
+            background: url("/image/money.jpg");
             background-repeat: no-repeat;
             background-size: cover;
             background-attachment: fixed;
