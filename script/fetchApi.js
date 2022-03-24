@@ -33,4 +33,4 @@ const setValor = function(data,idDiv){
     }
 }
 
-setInterval(acionarFuncao, 1000)
+setInterval(acionarFuncao, 10000)
