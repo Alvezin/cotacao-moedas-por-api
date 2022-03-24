@@ -158,7 +158,7 @@ main .about {
 }
 main .about article {
   grid-area: txt;
-  background: url("/image/money.jpg");
+  background: url(../image/money.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
