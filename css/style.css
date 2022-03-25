@@ -179,6 +179,7 @@ main .about article p {
   align-items: center;
   color: #F0F4F2;
   line-height: 50px;
+  text-align: justify;
 }
 main .about form {
   width: calc(100% - 20px);
@@ -190,6 +191,7 @@ main .about form {
   background-color: #F0F4F2;
   padding: 10px;
   box-sizing: border-box;
+  box-shadow: 0px 8px 1px #00F35A;
 }
 main .about form h3 {
   text-align: center;
@@ -342,17 +344,28 @@ footer .logo {
     height: calc(100vh - 130px);
     padding: 10px;
     box-sizing: border-box;
+    z-index: 10;
   }
   header nav ul li {
     height: 20%;
     margin: 0;
     text-align: center;
   }
+  header nav ul li:last-child {
+    border: none;
+    margin: 0;
+    font-weight: bold;
+  }
+  header nav ul li:last-child a {
+    color: #00A53D;
+    text-decoration: underline dotted;
+  }
   header nav ul li a {
     font-size: 1rem;
   }
   header nav ul.active {
     display: flex;
+    animation: slideImg 0.2s;
   }
 
   main .slide {

@@ -4,52 +4,91 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/stylePag2.css">
+    <script type="module" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"></script>
+    <link rel="stylesheet" href="css/orcamento.css">
     <title>Document</title>
 </head>
 <body>
-    <section class="conversor">
-            
-        <div id="compra">
-            <h3>Compra</h3>
-            <label for="inputParCompra">Par: </label>
-            <input id="inputParCompra" type="text" class="inputValor" placeholder="Escolha o par:" list="valueCompra">
-            <p id="parCompra"></p>
-            
-            <label for="inputValueCompra">Quantidade: </label>
-            <input id="inputValueCompra" type="number" class="inputValor" placeholder="Valor:" size="10" list="values">
-            
-            <input type="button" id="submitCompra"  class="btn" value="Converter" onclick=" mult('inputParCompra', 'inputValueCompra', 'totalCompra')">
+    <header>
+        <h1>Quotation Now</h1>
+        <nav>
+            <button id="toggleMenu" onclick="toggleMenu('menu')"><ion-icon name="menu"></ion-icon></button>
+            <ul id="menu">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="page.html">Catálogo</a></li>
+                <li><a href="orcamento.html">Orçamento</a></li>
+                <li><a href="#">Histórico</a></li>
+                <li><a href="#">Cadastro</a></li>
+            </ul>
+        </nav>
+    </header>
 
-            <p>Valor total: <span id="totalCompra"></span></p>
+    <main>
+        <h2>Aqui você pode fazer o orçamento de compra e venda de moedas a partir da cotação atual!</h2>
+        <section class="conversor">
+            <div id="compra">
+                <h3>Compra</h3>
+                <label for="inputParCompra">Par: </label>
+                <input id="inputParCompra" type="text" class="inputValor" placeholder="Escolha o par:" list="valueCompra">
+                <p id="parCompra"></p>
+        
+                <label for="inputValueCompra">Quantidade: </label>
+                <input id="inputValueCompra" type="number" class="inputValor" placeholder="Valor:" size="12" list="values">
+        
+                <input type="button" id="submitCompra"  class="btn" value="Converter" onclick=" mult('inputParCompra', 'inputValueCompra', 'totalCompra')">
+                <p>Valor total: <span id="totalCompra"></span></p>
+                <datalist id="valueCompra">
+                </datalist>
+        
+            </div>
+            <div id="venda">
+                <h3>Venda</h3>
+                <label for="inputParVenda">Par: </label>
+                <input id="inputParVenda" type="text" class="inputValor" placeholder="Escolha o par:"  list="valueVenda" >
+                <p id="parVenda"></p>
+        
+                <label for="inputValueVenda">Quantidade: </label>
+                <input id="inputValueVenda" type="number" class="inputValor" placeholder="Valor:" size="12" list="values">
+        
+                <input type="button" id="submitVenda" class="btn" value="Converter"  onclick=" mult('inputParVenda', 'inputValueVenda', 'totalVenda')">
+                <p>Valor total: <span id="totalVenda"></span></p>
+                <datalist id="valueVenda">
+        
+                </datalist>
+        
+            </div>
+        </section>
+    </main>
 
-            <datalist id="valueCompra">
-            </datalist>
-            
-        </div>
-
-        <div id="venda">
-            <h3>Venda</h3>
-            <label for="inputParVenda">Par: </label>
-            <input id="inputParVenda" type="text" class="inputValor" placeholder="Escolha o par:"  list="valueVenda" >
-            <p id="parVenda"></p>
-                  
-            <label for="inputValueVenda">Quantidade: </label>
-            <input id="inputValueVenda" type="number" class="inputValor" placeholder="Valor:" size="10" list="values">
-            
-            <input type="button" id="submitVenda" class="btn" value="Converter"  onclick=" mult('inputParVenda', 'inputValueVenda', 'totalVenda')">
-
-            <p>Valor total: <span id="totalVenda"></span></p>
-
-            <datalist id="valueVenda">
-               
-            </datalist>
-            
-        </div>
-
-    </section>
-<script src="script/fetchCompraVenda.js"></script>
-<script src="script/convert.js"></script>
+    <footer>
+        <section class="social">
+            <nav>
+                <h4>Redes sociais!</h4>
+                <ul>
+                    <li><a href="#"><ion-icon name="logo-facebook"></ion-icon> Facebook</a></li>
+                    <li><a href="#"><ion-icon name="logo-instagram"></ion-icon> Instagram</a></li>
+                    <li><a href="#"><ion-icon name="logo-linkedin"></ion-icon> LinkedIn</a></li>
+                    <li><a href="#"><ion-icon name="logo-twitter"></ion-icon> Twitter</a></li>
+                </ul>
+            </nav>
+        </section>
+        <section class="logo">
+            <h2>Quotation Now &#174;</h2>
+        </section>
+        <section class="outros">
+            <nav>
+                <h4>Outros</h4>
+                <ul>
+                    <li><a href="#">Trabalhe Conosco</a></li>
+                    <li><a href="#">Jurídico</a></li>
+                    <li><a href="#">Políticas de Privacidade</a></li>
+                </ul>
+            </nav>
+        </section>
+    </footer>
+<script src="script/toggleMenu.js"></script>
+<script src="../script/fetchCompraVenda.js"></script>
+<script src="../script/convert.js"></script>
 
 </body>
 </html>

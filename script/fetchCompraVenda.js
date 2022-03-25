@@ -20,10 +20,12 @@ const addPares = (dados) => {
         fetch(`https://economia.awesomeapi.com.br/last/${elemento}`, options)
             .then( response => { return response.json()
                 .then( data => {
-                    opt.value = data[nomeConcat].bid;
+                    if (data[nomeConcat] !== undefined){
+                        opt.value = data[nomeConcat].bid;
+                    }
                 })
             })
-        .catch(e => {window.alert('Não foi possível carregar os dados', e)})
+        .catch(e => {window.alert('Alguns dados não foram totalmente carregados', e)})
         document.getElementById('valueCompra').appendChild(opt)
      
     }
@@ -36,7 +38,9 @@ const addPares = (dados) => {
         fetch(`https://economia.awesomeapi.com.br/last/${elemento}`, options)
         .then( response => { return response.json()
             .then( data => {
-                opt.value = data[nomeConcat].ask;
+                if (data[nomeConcat] !== undefined){
+                    opt.value = data[nomeConcat].ask;
+                } 
             })
         })
 
