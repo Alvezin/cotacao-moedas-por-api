@@ -44,6 +44,8 @@ const getHistoric = () => {
 
     if (diasInput > 30){
         window.alert('Limite máximo de 30 dias')
+    } else if (diasInput < 1){
+        window.alert('Insira quantidade de dias válido')
     } else{
         fetch(`https://economia.awesomeapi.com.br/json/daily/${parInput}/${diasInput}`)
         .then(response => response.json()

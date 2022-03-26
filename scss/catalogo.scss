@@ -1,4 +1,5 @@
 @import "variavel.scss";
+
 @mixin button {
     margin: auto;
     padding: 8px 30px;
@@ -56,76 +57,54 @@ header{
         }
     }
 }
-
 main{
-    margin-bottom: 20px;
-    & h1{
-        text-align: center;
-        color: $verde2;
-    }
-    & form{
-        box-shadow: 0px 8px 1px $verde1;
-        border-radius: 10px;
-        border-top: 2px solid $verde1;
-        background-color: $branco;
-        margin: 50px auto ;
-        width: 200px;
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-        & legend{
-            text-align: center;
-            text-transform: uppercase;
-            color: $verde2;
-        }
-        & #submit{
-            @include button();
-            background-color: $verde1;
-            border: 2px solid $verde1;
-            margin-top: 10px;
-        }
-        & input{
-            width: 60%;
-            border-radius: 10px;
-            padding: 7px 20px;
-            font-size: 1rem;
-            border: 2px solid rgb(191, 187, 187);
-        }
-        & fieldset{
-            border: none;
-            display: flex;
-            flex-direction: column;
-        }
-    }
-    & .modelo{
-        display: none;
-    }
-    & .appear{
-        padding: 20px;
-        width: 50%;
-        height: 600px;
-        background-color: $branco;
-        overflow-y: scroll;
-        border-radius: 10px;
-        border: 1px solid rgb(181, 172, 172);
-        margin: auto;
-        & .content{            
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-            & div{
-                margin: auto;
-                
-                & h3{
-                    color: $verde2;
-                }
-            }
-            
     
+    & .data{
+        display: grid;
+        grid-template-areas: 
+        "coin data"
+        "coin data";
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 1fr 1fr;
+        grid-area: coin;
+        margin: 0 auto;
+        & .coins{
+            box-sizing: border-box;
+            background-color: $branco;
+            border: 2px solid rgb(197, 196, 196);
+            border-left: 8px solid $verde1;
+            height: 300px;
+            width: 95%;
+            overflow-y: scroll;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            & p{
+                padding-left: 10px;
+            }
         }
+        & .data{
+            grid-area: data;
+            box-sizing: border-box;
+            background-color: $branco;
+            border: 2px solid rgb(197, 196, 196);
+            border-right: 8px solid $verde1;
+            height: 300px;
+            width: 95%;
+            border-radius: 10px;
+        }
+    }
+    & h1{
+        grid-area: title;
+        text-align: center;
+        padding: 20px;
+        color: $verde2;
     }
    
 }
+
+
 
 footer{
     background-color: black;

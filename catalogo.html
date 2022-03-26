@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="module" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"></script>
-    <link rel="stylesheet" href="css/historic.css">
-    <title>Quotation Now | Histórico</title>
+    <link rel="stylesheet" href="css/catalogo.css">
+    <title>Document</title>
 </head>
 <body>
     <header>
@@ -22,41 +22,18 @@
             </ul>
         </nav>
     </header>
-
+    
     <main>
-        <h1>Histórico de moedas</h1>
-
-        <form action="">
-            <legend>Fechamento dos últimos dias</legend>
-            <fieldset>
-                <label for="par">Par:</label>
-                <input type="text" id="par" placeholder="Selecione o par:" list="parLista">
-            </fieldset>
-            <fieldset>
-                <label for="dias">Quantidade de dias:</label>
-                <input type="number" id="dias" placeholder="Insira o numero de dias">
-            </fieldset>
-            <input type="button" id="submit" value="Enviar">
-            <datalist id="parLista">
-
-            </datalist>
-        </form>
-        <section class="modelo"> <!--Modelo para trazer as pesquisas-->
-            <div id="div" class="caixa">
-                <h3>Par</h3>
-                <p class="bid">Compra:</p>
-                <p class="ask">Venda:</p>
-                <p class="pctChange">Variação: </p>
-                <p class="low">Mínimo: </p>
-                <p class="high">Máximo: </p>
-            </div>
-        </section>
-        <section class="appear">
-            <section class="content" id="content">
-            
+        <h1>Catálogo de moedas</h1>
+        <section class="data">
+            <section class="coins" id="addCoins">
+            </section>
+            <section class="data">
             </section>
         </section>
     </main>
+
+
 
     <footer>
         <section class="social">
@@ -84,8 +61,6 @@
             </nav>
         </section>
     </footer>
-<script src="script/gethistoric.js"></script>
-<script src="script/fetchDisponivel.js"></script>
-<script src="script/toggleMenu.js"></script>
+<script src="script/fetchDisponivelCompleto.js"></script>
 </body>
 </html>

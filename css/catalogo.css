@@ -40,78 +40,44 @@ header nav ul li a:hover {
   animation: underline 0.8s forwards;
 }
 
-main {
-  margin-bottom: 20px;
+main .data {
+  display: grid;
+  grid-template-areas: "coin data" "coin data";
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 1fr 1fr;
+  grid-area: coin;
+  margin: 0 auto;
 }
-main h1 {
-  text-align: center;
-  color: #00A53D;
-}
-main form {
-  box-shadow: 0px 8px 1px #00F35A;
-  border-radius: 10px;
-  border-top: 2px solid #00F35A;
+main .data .coins {
+  box-sizing: border-box;
   background-color: #F0F4F2;
-  margin: 50px auto;
-  width: 200px;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-}
-main form legend {
-  text-align: center;
-  text-transform: uppercase;
-  color: #00A53D;
-}
-main form #submit {
-  margin: auto;
-  padding: 8px 30px;
-  text-transform: uppercase;
-  display: block;
-  cursor: pointer;
-  border-radius: 10px;
-  background-color: #00F35A;
-  border: 2px solid #00F35A;
-  margin-top: 10px;
-}
-main form #submit:hover {
-  color: #F0F4F2;
-  transition: 0.5s;
-}
-main form input {
-  width: 60%;
-  border-radius: 10px;
-  padding: 7px 20px;
-  font-size: 1rem;
-  border: 2px solid #bfbbbb;
-}
-main form fieldset {
-  border: none;
-  display: flex;
-  flex-direction: column;
-}
-main .modelo {
-  display: none;
-}
-main .appear {
-  padding: 20px;
-  width: 50%;
-  height: 600px;
-  background-color: #F0F4F2;
+  border: 2px solid #c5c4c4;
+  border-left: 8px solid #00F35A;
+  height: 300px;
+  width: 95%;
   overflow-y: scroll;
   border-radius: 10px;
-  border: 1px solid #b5acac;
-  margin: auto;
-}
-main .appear .content {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 15px;
 }
-main .appear .content div {
-  margin: auto;
+main .data .coins p {
+  padding-left: 10px;
 }
-main .appear .content div h3 {
+main .data .data {
+  grid-area: data;
+  box-sizing: border-box;
+  background-color: #F0F4F2;
+  border: 2px solid #c5c4c4;
+  border-right: 8px solid #00F35A;
+  height: 300px;
+  width: 95%;
+  border-radius: 10px;
+}
+main h1 {
+  grid-area: title;
+  text-align: center;
+  padding: 20px;
   color: #00A53D;
 }
 
@@ -210,4 +176,4 @@ footer .logo {
   }
 }
 
-/*# sourceMappingURL=historic.css.map */
+/*# sourceMappingURL=catalogo.css.map */
