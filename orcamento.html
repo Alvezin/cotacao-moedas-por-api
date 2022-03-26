@@ -15,9 +15,9 @@
             <button id="toggleMenu" onclick="toggleMenu('menu')"><ion-icon name="menu"></ion-icon></button>
             <ul id="menu">
                 <li><a href="index.html">Início</a></li>
-                <li><a href="page.html">Notícias</a></li>
+                <li><a href="#">Notícias</a></li>
                 <li><a href="orcamento.html">Orçamento</a></li>
-                <li><a href="#">Histórico</a></li>
+                <li><a href="historic.html">Histórico</a></li>
                 <li><a href="#">Cadastro</a></li>
             </ul>
         </nav>
@@ -30,7 +30,7 @@
                 <h3>Compra</h3>
                 <label for="inputParCompra">Par: </label>
                 <input id="inputParCompra" type="text" class="inputValor" placeholder="Escolha o par:" list="valueCompra">
-                <p id="parCompra"></p>
+                <p>Valor unitário: <span id="parCompra"></span></p>
         
                 <label for="inputValueCompra">Quantidade: </label>
                 <input id="inputValueCompra" type="number" class="inputValor" placeholder="Valor:" size="12" list="values">
@@ -45,8 +45,8 @@
                 <h3>Venda</h3>
                 <label for="inputParVenda">Par: </label>
                 <input id="inputParVenda" type="text" class="inputValor" placeholder="Escolha o par:"  list="valueVenda" >
-                <p id="parVenda"></p>
-        
+                <p>Valor unitário: <span id="parVenda"></span></p>
+
                 <label for="inputValueVenda">Quantidade: </label>
                 <input id="inputValueVenda" type="number" class="inputValor" placeholder="Valor:" size="12" list="values">
         
@@ -86,8 +86,8 @@
             </nav>
         </section>
     </footer>
+<script src="script/fetchDisponivel.js"></script>
 <script src="script/toggleMenu.js"></script>
-<script src="script/fetchCompraVenda.js"></script>
 <script src="script/convert.js"></script>
 
 </body>

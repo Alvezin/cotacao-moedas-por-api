@@ -5,7 +5,6 @@ class EachDay {
         this.variacao = pctChange,
         this.minimo = low,
         this.maximo = high
-
     }
     putHtml(){
         const caixa = document.getElementById('div');
@@ -18,25 +17,35 @@ class EachDay {
                 childTxt.push(filhos[i])
             }
         }
+        childTxt[0].textContent = document.getElementById('par').value;
         childTxt[1].textContent += this.compra
         childTxt[2].textContent += this.venda
         childTxt[3].textContent += this.variacao
         childTxt[4].textContent += this.minimo
         childTxt[5].textContent += this.maximo
 
-        document.getElementById('content').appendChild(clone)
-        
-        document.getElementById('content').remove
 
+        document.getElementById('content').appendChild(clone)
     }
 }
 
-const getHistoric = () => {
+const cleanBox = () => { //Limpa container para nova pesquisa
+    let box = document.querySelectorAll('#content #div')
+    console.log(box)
+    box.forEach(el => {
+        el.remove()
+    })
+}
 
+const getHistoric = () => {
+    cleanBox()
     const parInput = document.getElementById('par').value;
     const diasInput = document.getElementById('dias').value;
 
-    fetch(`https://economia.awesomeapi.com.br/json/daily/${parInput}/${diasInput}`)
+    if (diasInput > 30){
+        window.alert('Limite máximo de 30 dias')
+    } else{
+        fetch(`https://economia.awesomeapi.com.br/json/daily/${parInput}/${diasInput}`)
         .then(response => response.json()
             .then(data =>{
                 const el = document.getElementById('content')
@@ -50,6 +59,8 @@ const getHistoric = () => {
                    
                }
             }))
+    }
+    
 }
 
 

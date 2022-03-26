@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"></script>
     <link rel="stylesheet" href="css/historic.css">
     <title>Quotation Now | Histórico</title>
 </head>
@@ -14,9 +15,9 @@
             <button id="toggleMenu" onclick="toggleMenu('menu')"><ion-icon name="menu"></ion-icon></button>
             <ul id="menu">
                 <li><a href="index.html">Início</a></li>
-                <li><a href="page.html">Notícias</a></li>
+                <li><a href="">Notícias</a></li>
                 <li><a href="orcamento.html">Orçamento</a></li>
-                <li><a href="#">Histórico</a></li>
+                <li><a href="historic.html">Histórico</a></li>
                 <li><a href="#">Cadastro</a></li>
             </ul>
         </nav>
@@ -36,19 +37,24 @@
                 <input type="number" id="dias" placeholder="Insira o numero de dias">
             </fieldset>
             <input type="button" id="submit" value="Enviar">
-            <datalist id="parLista" for>
+            <datalist id="parLista">
 
             </datalist>
         </form>
-        <section class="content" id="content">
+        <section class="modelo"> <!--Modelo para trazer as pesquisas-->
             <div id="div" class="caixa">
                 <h3>Par</h3>
                 <p class="bid">Compra:</p>
                 <p class="ask">Venda:</p>
-                <p class="pctChange">Variação</p>
+                <p class="pctChange">Variação: </p>
                 <p class="low">Mínimo: </p>
                 <p class="high">Máximo: </p>
             </div>
+        </section>
+        <section class="appear">
+            <section class="content" id="content">
+            
+            </section>
         </section>
     </main>
 
