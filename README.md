@@ -4,9 +4,11 @@
 Os dados retirados da API são atualizados (de acordo com a própria) a cada 30s
 
 Funcionalidades:
- > *Pode adquirir cotações de dias anteriores, em até 30 dias passados (a API disponibiliza mais dias).*
- > *'Orçamento' de moedas, tendo mudanças mínimas de valor, se for venda ou compra*
- > *Um catálogo de moedas, onde a sua cotação atual pode ser checada*
+ > * Pode adquirir cotações de dias anteriores, em até 30 dias passados (a API disponibiliza mais dias).* <br/>
+ > <br/>
+ > * 'Orçamento' de moedas, tendo mudanças mínimas de valor, se for venda ou compra.* <br/>
+ > <br/>
+ > * Um catálogo de moedas, onde a sua cotação atual pode ser checada.*
 
 
 
