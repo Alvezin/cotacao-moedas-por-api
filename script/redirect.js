@@ -1,3 +1,3 @@
 function redirect(){
-    window.location.href='page.html'
+    window.location.href='catalogo.html'
 }

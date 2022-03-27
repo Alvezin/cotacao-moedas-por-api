@@ -224,10 +224,38 @@ footer{
             }
         }
     }
+    main{
+        & .data{
+            grid-template-areas: 
+            "coin coin"
+            "data data";
+            grid-template-columns: 100%;
+            & .coins{
+                margin: 10px auto;
+                width: 60%;
+            }
+            & .coinsData{
+                margin: 10px auto;
+                width: 60%;
+                border-left: 8px solid $verde1;
+                border-right: 2px solid rgb(197, 196, 196);
+            }
+        }
+    }
 }
 
 
 @media screen and (max-width: 482px) {
+    main{
+        & .data{
+            & .coins{
+                width: 80%;
+            }
+            & .coinsData{
+                width: 80%;
+            }
+        }
+    }
     footer{
         & h2{
             display: none;

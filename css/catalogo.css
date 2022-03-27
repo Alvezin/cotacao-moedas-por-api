@@ -186,8 +186,30 @@ footer .logo {
     display: flex;
     animation: slideImg 0.2s;
   }
+
+  main .data {
+    grid-template-areas: "coin coin" "data data";
+    grid-template-columns: 100%;
+  }
+  main .data .coins {
+    margin: 10px auto;
+    width: 60%;
+  }
+  main .data .coinsData {
+    margin: 10px auto;
+    width: 60%;
+    border-left: 8px solid #00F35A;
+    border-right: 2px solid #c5c4c4;
+  }
 }
 @media screen and (max-width: 482px) {
+  main .data .coins {
+    width: 80%;
+  }
+  main .data .coinsData {
+    width: 80%;
+  }
+
   footer h2 {
     display: none;
   }
