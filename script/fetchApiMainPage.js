@@ -32,5 +32,5 @@ const setValor = function(data,idDiv){
         }
     }
 }
-
+acionarFuncao()
 setInterval(acionarFuncao, 5000)
