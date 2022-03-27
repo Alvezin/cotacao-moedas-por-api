@@ -1,5 +1,4 @@
 @import "variavel.scss";
-
 @mixin button {
     margin: auto;
     padding: 8px 30px;
@@ -58,70 +57,46 @@ header{
     }
 }
 main{
-    
-    & .data{
-        display: grid;
-        grid-template-areas: 
-        "coin data"
-        "coin data";
-        grid-template-columns: 50% 50%;
-        grid-template-rows: 1fr 1fr;
-        grid-area: coin;
-        margin: 0 auto;
-        & .coins{
-            box-sizing: border-box;
-            background-color: $branco;
-            border: 2px solid rgb(197, 196, 196);
-            border-left: 8px solid $verde1;
-            height: 300px;
-            width: 95%;
-            overflow-y: scroll;
-            border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    padding: 10px;
+    & form{
+        border-top: 3px solid $verde1;
+        background-color: $branco;
+        border-radius: 10px;
+        box-shadow: 0 8px 1px $verde1;
+        & fieldset{
             display: flex;
             flex-direction: column;
-            gap: 15px;
-            & p{
-                padding-left: 10px;
-                &:hover{
-                    color: $verde1;
-                    transition: .2s;
-                }
+            border: none;
+            margin: 10px 0;
+            padding: 10px;
+            & label{
+                padding-left: 5px;
+            }
+            & input{
+                padding: 5px;
+                border-radius: 10px;
+                border: 2px solid rgb(194, 192, 192);
             }
         }
-        & .coinsData{
-            grid-area: data;
-            box-sizing: border-box;
-            background-color: $branco;
-            border: 2px solid rgb(197, 196, 196);
-            border-right: 8px solid $verde1;
-            height: 300px;
-            width: 95%;
-            border-radius: 10px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            & h3{
-                color: $verde2;
-                margin-bottom: 5px;
+        & .btn-box{
+            margin-bottom: 10px;
+            & button{
+                @include button();
+                background-color: $verde1;
+                border: 1px solid $verde1;
             }
-            & p{
-                color: $verde4;
-                & span{
-                    color: $verde3;
-                }
-            }
-            
         }
+        & .check{
+            padding: 10px;
+        }
+        
+        
     }
-    & h1{
-        grid-area: title;
-        text-align: center;
-        padding: 20px;
-        color: $verde2;
-    }
-   
 }
-
 
 
 footer{
@@ -161,7 +136,6 @@ footer{
 }
 
 
-
 @keyframes slideImg {
     0%{
         opacity: 0;
@@ -172,6 +146,15 @@ footer{
         scale: 1;
     }
 }
+
+@keyframes underline {
+   to{
+       color: $verde2;
+   }
+   
+    
+}
+
 
 @media screen and (max-width: 706px) {
     header{
@@ -226,6 +209,13 @@ footer{
     }
 }
 
+@media screen and (max-width:632px) {
+    main{
+        & .conversor{
+            gap: 20px;
+        }
+    }
+}
 
 @media screen and (max-width: 482px) {
     footer{

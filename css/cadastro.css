@@ -40,62 +40,53 @@ header nav ul li a:hover {
   animation: underline 0.8s forwards;
 }
 
-main .data {
-  display: grid;
-  grid-template-areas: "coin data" "coin data";
-  grid-template-columns: 50% 50%;
-  grid-template-rows: 1fr 1fr;
-  grid-area: coin;
-  margin: 0 auto;
-}
-main .data .coins {
-  box-sizing: border-box;
-  background-color: #F0F4F2;
-  border: 2px solid #c5c4c4;
-  border-left: 8px solid #00F35A;
-  height: 300px;
-  width: 95%;
-  overflow-y: scroll;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-main .data .coins p {
-  padding-left: 10px;
-}
-main .data .coins p:hover {
-  color: #00F35A;
-  transition: 0.2s;
-}
-main .data .coinsData {
-  grid-area: data;
-  box-sizing: border-box;
-  background-color: #F0F4F2;
-  border: 2px solid #c5c4c4;
-  border-right: 8px solid #00F35A;
-  height: 300px;
-  width: 95%;
-  border-radius: 10px;
+main {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 20px;
+  padding: 10px;
 }
-main .data .coinsData h3 {
-  color: #00A53D;
-  margin-bottom: 5px;
+main form {
+  border-top: 3px solid #00F35A;
+  background-color: #F0F4F2;
+  border-radius: 10px;
+  box-shadow: 0 8px 1px #00F35A;
 }
-main .data .coinsData p {
-  color: #00230D;
+main form fieldset {
+  display: flex;
+  flex-direction: column;
+  border: none;
+  margin: 10px 0;
+  padding: 10px;
 }
-main .data .coinsData p span {
-  color: #00722B;
+main form fieldset label {
+  padding-left: 5px;
 }
-main h1 {
-  grid-area: title;
-  text-align: center;
-  padding: 20px;
-  color: #00A53D;
+main form fieldset input {
+  padding: 5px;
+  border-radius: 10px;
+  border: 2px solid #c2c0c0;
+}
+main form .btn-box {
+  margin-bottom: 10px;
+}
+main form .btn-box button {
+  margin: auto;
+  padding: 8px 30px;
+  text-transform: uppercase;
+  display: block;
+  cursor: pointer;
+  border-radius: 10px;
+  background-color: #00F35A;
+  border: 1px solid #00F35A;
+}
+main form .btn-box button:hover {
+  color: #F0F4F2;
+  transition: 0.5s;
+}
+main form .check {
+  padding: 10px;
 }
 
 footer {
@@ -138,6 +129,11 @@ footer .logo {
   100% {
     opacity: 1;
     scale: 1;
+  }
+}
+@keyframes underline {
+  to {
+    color: #00A53D;
   }
 }
 @media screen and (max-width: 706px) {
@@ -187,10 +183,15 @@ footer .logo {
     animation: slideImg 0.2s;
   }
 }
+@media screen and (max-width: 632px) {
+  main .conversor {
+    gap: 20px;
+  }
+}
 @media screen and (max-width: 482px) {
   footer h2 {
     display: none;
   }
 }
 
-/*# sourceMappingURL=catalogo.css.map */
+/*# sourceMappingURL=cadastro.css.map */
