@@ -18,13 +18,12 @@ const fetchDisponivelCompleto = (lista, tipoElemento, idDiv) => { //Pega os pare
 const addPares = (dados, lista, tipoElemento, idDiv) => { //adiciona os pares na lista de pares
     for (elemento in dados){
         const opt = document.createElement(tipoElemento)
-        opt.addEventListener('click', () => { //evento de aparecer na div as infos do 'opt'
-            mostrarNaTela(opt, idDiv)
-        })
         opt.style.cursor = 'pointer'
         opt.textContent = `${elemento}: ${dados[elemento]}`
         document.getElementById(lista).appendChild(opt)
-        mostrarNaTela(opt, idDiv)
+        opt.addEventListener('click', () => { //evento de aparecer na div as infos do 'opt'
+            mostrarNaTela(opt, idDiv)
+        })
     }
 }
 
@@ -34,9 +33,9 @@ const addPares = (dados, lista, tipoElemento, idDiv) => { //adiciona os pares na
 const mostrarNaTela = (opt, idDiv) => { //ao clicar no elemento da lista, esse processo de inicia, para buscar os valores
     const textOpt = opt.textContent
     const textOptSplit = textOpt.split(':')
-    const namePar = textOptSplit[0]
-    const nameConcat = namePar.split('-').join('')
 
+    const namePar = textOptSplit[0]
+    const nameConcat = namePar.split('-')[0]
 
     fetch(`https://economia.awesomeapi.com.br/last/${namePar}`, options)
         .then( response => { return response.json()
@@ -49,6 +48,7 @@ const mostrarNaTela = (opt, idDiv) => { //ao clicar no elemento da lista, esse p
         /*-------------------------- */
     const setValor = function(data,idDiv){
         for (elemento in data){
+
             if(document.querySelector(`#${idDiv} .${elemento}`)){
                 document.querySelector(`#${idDiv} .${elemento}`).textContent = data[elemento]
             }

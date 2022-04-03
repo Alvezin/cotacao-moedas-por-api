@@ -1,6 +1,6 @@
 const mult = (idPar, idValue, idInput) =>{
     const nomePar = document.getElementById(idPar).value;
-    const nomeConcat = nomePar.split('-').join('')
+    const nomeConcat = nomePar.split('-')[0]
     let a = nomePar.split('-')
     let quantiaFinal = a.splice(1, 1)
     if (idPar === 'inputParCompra'){
