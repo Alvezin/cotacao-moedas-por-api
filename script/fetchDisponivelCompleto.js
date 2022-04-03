@@ -24,7 +24,7 @@ const addPares = (dados, lista, tipoElemento, idDiv) => { //adiciona os pares na
         opt.style.cursor = 'pointer'
         opt.textContent = `${elemento}: ${dados[elemento]}`
         document.getElementById(lista).appendChild(opt)
-       // ap()
+        mostrarNaTela(opt, idDiv)
     }
 }
 
