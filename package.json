@@ -1,0 +1,22 @@
+{
+  "name": "cotacao",
+  "version": "1.0.0",
+  "description": "Projeto em Js puro de cotação de moedas",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alvezin/cotacao-moedas-por-api.git"
+  },
+  "author": "Gabriel Alves",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Alvezin/cotacao-moedas-por-api/issues"
+  },
+  "homepage": "https://github.com/Alvezin/cotacao-moedas-por-api#readme",
+  "dependencies": {
+    "axios": "^0.26.1"
+  }
+}
