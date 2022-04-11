@@ -31,7 +31,6 @@ class EachDay {
 
 const cleanBox = () => { //Limpa container para nova pesquisa
     let box = document.querySelectorAll('#content #div')
-    console.log(box)
     box.forEach(el => {
         el.remove()
     })

@@ -15,8 +15,5 @@
   "bugs": {
     "url": "https://github.com/Alvezin/cotacao-moedas-por-api/issues"
   },
-  "homepage": "https://github.com/Alvezin/cotacao-moedas-por-api#readme",
-  "dependencies": {
-    "axios": "^0.26.1"
-  }
+  "homepage": "https://github.com/Alvezin/cotacao-moedas-por-api#readme"
 }

@@ -3,7 +3,6 @@ const btnBack = document.getElementById('btn-back');
 
 const slideBox = document.getElementById('slide-box').children;
 
-console.log(slideBox)
 
 
 btnFront.addEventListener('click', () =>{
