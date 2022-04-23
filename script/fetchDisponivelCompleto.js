@@ -35,7 +35,7 @@ const mostrarNaTela = (opt, idDiv) => { //ao clicar no elemento da lista, esse p
     const textOptSplit = textOpt.split(':')
 
     const namePar = textOptSplit[0]
-    const nameConcat = namePar.split('-')[0]
+    const nameConcat = namePar.split('-').join('')
 
     fetch(`https://economia.awesomeapi.com.br/last/${namePar}`, options)
         .then( response => { return response.json()

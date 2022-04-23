@@ -4,7 +4,7 @@ const acionarFuncao = () =>{
     getDiv.forEach((elemento)=>{
         const id = elemento.id;
         const nome = elemento.firstElementChild.textContent;
-        const nomeConcat = elemento.firstElementChild.textContent.split('-')[0] // variável usada para acessar o objeto dentro do data
+        const nomeConcat = elemento.firstElementChild.textContent.split('-').join('') // variável usada para acessar o objeto dentro do data
         getValor(id, nomeConcat, nome)
     })
 }
