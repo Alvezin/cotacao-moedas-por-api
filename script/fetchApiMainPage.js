@@ -9,28 +9,24 @@ const acionarFuncao = () =>{
     })
 }
 
-const getValor = function(idDiv, nomeConcat, nome){
+const getValor = async function(idDiv, nomeConcat, nome){
     const options = {
         method: 'GET',
         mode: 'cors',
         cache: 'default'
     }
-    axios.get(`https://economia.awesomeapi.com.br/last/${nome}`, options)
-        .then(res => {
-            setValor(res.data, idDiv, nomeConcat)
-
-        }).catch(e => window.alert(`Erro ao carregar alguns dados ${e}`))
+    const req = await axios.get(`https://economia.awesomeapi.com.br/last/${nome}`, options)
+    console.log(req.data)
+    setValor(req.data, idDiv, nomeConcat)
 }
-
 
 const setValor = function(data,idDiv,nomeConcat){
     for (elemento in data[nomeConcat]){
         if(document.querySelector(`#${idDiv} .${elemento}`)){
             document.querySelector(`#${idDiv} .${elemento}`).textContent = data[nomeConcat][elemento]
-                                                 //os dados vem em um objeto com objeto, 
-                                                // contendo o nome como a primeira moeda do par
         }
     }
 }
-acionarFuncao()
+
+window.addEventListener("load", acionarFuncao())
 setInterval(acionarFuncao, 5000)

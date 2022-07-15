@@ -35,7 +35,7 @@
                 <label for="inputValueCompra">Quantidade: </label>
                 <input id="inputValueCompra" type="number" class="inputValor" placeholder="Valor:" size="12" list="values">
         
-                <input type="button" id="submitCompra"  class="btn" value="Converter" onclick=" mult('inputParCompra', 'inputValueCompra', 'totalCompra')">
+                <input type="button" id="submitCompra"  class="btn" value="Converter" onclick=" getValues('inputParCompra', 'inputValueCompra', 'totalCompra')">
                 <p>Valor total: <span id="totalCompra"></span></p>
                 <datalist id="valueCompra">
 
@@ -51,7 +51,7 @@
                 <label for="inputValueVenda">Quantidade: </label>
                 <input id="inputValueVenda" type="number" class="inputValor" placeholder="Valor:" size="12" list="values">
         
-                <input type="button" id="submitVenda" class="btn" value="Converter"  onclick=" mult('inputParVenda', 'inputValueVenda', 'totalVenda')">
+                <input type="button" id="submitVenda" class="btn" value="Converter"  onclick=" getValues('inputParVenda', 'inputValueVenda', 'totalVenda')">
                 <p>Valor total: <span id="totalVenda"></span></p>
                 <datalist id="valueVenda">
         
