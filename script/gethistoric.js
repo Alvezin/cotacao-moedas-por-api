@@ -36,36 +36,30 @@ const cleanBox = () => { //Limpa container para nova pesquisa
     })
 }
 
-const getHistoric = () => {
+async function getHistoric (parInput, diasInput) {
+    const req = await axios.get(`https://economia.awesomeapi.com.br/json/daily/${parInput}/${diasInput}`)
+    for (elemento in req.data){
+        let ele = req.data[elemento]
+        const dia = new EachDay(ele.bid, ele.ask, ele.pctChange, ele.low, ele.high)
+        dia.putHtml()
+    }
+}
+
+const newHistoric = async () => {
     cleanBox()
     const parInput = document.getElementById('par').value;
     const diasInput = document.getElementById('dias').value;
-
-    if (diasInput > 30){
-        window.alert('Limite máximo de 30 dias')
-    } else if (diasInput < 1){
-        window.alert('Insira quantidade de dias válido')
-    } else{
-        fetch(`https://economia.awesomeapi.com.br/json/daily/${parInput}/${diasInput}`)
-        .then(response => response.json()
-            .then(data =>{
-                const el = document.getElementById('content')
-               for (elemento in data){
-                    let ele = data[elemento]
-                    const dia = new EachDay(ele.bid, ele.ask, ele.pctChange, ele.low, ele.high)
-                    dia.putHtml()
-                    
-                    
-                    
-                   
-               }
-            }))
+    try{
+        if(diasInput > 30) throw new Error("Limite máximo de 30 dias")
+        if(diasInput < 1) throw new Error("Insira quantidade de dias válido")
+        await getHistoric(parInput, diasInput)
+    } catch(error) {
+        window.alert(error)
     }
-    
 }
 
 
 const getBtn = document.getElementById('submit');
-getBtn.addEventListener('click',getHistoric)
+getBtn.addEventListener('click',newHistoric)
 
 
