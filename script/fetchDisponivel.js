@@ -4,16 +4,9 @@ const options = {
     cache: 'default'
 }
 
-const fetchApiCompraVenda = (lista, tipoElemento) => {
-    fetch('https://economia.awesomeapi.com.br/json/available', options)
-    .then( response => {
-        response.json()
-            .then(data => {
-                addPares(data, lista, tipoElemento)
-
-            })
-    })
-    .catch(e => alert('Alguns dados não foram totalmente carregados', e))
+const fetchApiCompraVenda = async (lista, tipoElemento) => {
+    const req = await axios.get('https://economia.awesomeapi.com.br/json/available', options)
+    addPares(req.data, lista, tipoElemento)
 }
 
 const addPares = (dados, lista, tipoElemento) => {

@@ -16,7 +16,6 @@ const getValor = async function(idDiv, nomeConcat, nome){
         cache: 'default'
     }
     const req = await axios.get(`https://economia.awesomeapi.com.br/last/${nome}`, options)
-    console.log(req.data)
     setValor(req.data, idDiv, nomeConcat)
 }
 
